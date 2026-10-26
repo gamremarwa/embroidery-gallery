@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>خيوط الحكاية | معرض التطريز الفلسطيني</title>
+<meta name="description" content="معرض لأعمال التطريز اليدوي بأنماطه وغرزه وألوانه، حسب القطعة والمنطقة.">
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1D1112;--ink:#F6E9DC;--acc:#E0555B;--acc2:#E8B67A;--card:#2A1A1C;--line:#4A2C2F;--mut:#C7AFA3;--fd:'Reem Kufi',serif;--fb:'Tajawal',sans-serif}
+*{box-sizing:border-box;margin:0}
+body{font-family:var(--fb);background:var(--bg);color:var(--ink);line-height:1.75}
+button,input,select{font:inherit;color:inherit}button{cursor:pointer;border:0;background:none}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+.hero{padding:44px 0 34px;border-bottom:2px solid var(--line);background:repeating-linear-gradient(90deg,#B22B34 0 8px,#1D1112 8px 16px) bottom/100% 6px no-repeat}
+.hero h1{font-family:var(--fd);font-size:clamp(2rem,8vw,3.3rem);line-height:1.25;color:var(--acc)}
+.hero p{max-width:44ch;color:var(--mut);margin-top:8px;font-size:1.05rem}
+.hero .big{font-size:3rem;margin-bottom:6px}
+.bar{display:grid;gap:10px;padding:18px 0 8px;position:sticky;top:0;background:var(--bg);z-index:5}
+.row2{display:grid;grid-template-columns:1fr;gap:8px}
+@media(min-width:640px){.row2{grid-template-columns:2fr 1fr}}
+input[type=search],select{width:100%;padding:11px 14px;border-radius:12px;border:1.5px solid var(--line);background:var(--card)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;padding:6px 16px;border-radius:99px;border:1.5px solid var(--line);background:var(--card);font-weight:500}
+.chip[aria-pressed=true]{background:var(--acc);border-color:var(--acc);color:#fff}
+.cnt{color:var(--mut);font-size:.92rem;padding:4px 0 10px}
+.list{display:grid;gap:14px;padding-bottom:50px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:760px){.list{grid-template-columns:repeat(3,1fr)}}
+.it{background:var(--card);border:1.5px solid var(--line);border-radius:4px;overflow:hidden;text-align:start;display:flex;flex-direction:column;transition:transform .2s,border-color .2s;width:100%}
+.it:hover{transform:translateY(-2px);border-color:var(--acc)}
+.tile{aspect-ratio:1;display:grid;place-items:center;font-size:3.2rem;position:relative;}
+.it .tx{padding:12px 14px;flex:1}
+.it h3{font-family:var(--fd);font-size:1.18rem;line-height:1.4}
+.it .meta{color:var(--acc2);font-size:.9rem;font-weight:500}
+.it p{color:var(--mut);font-size:.95rem;margin-top:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.fav{position:absolute;top:6px;inset-inline-end:8px;font-size:1.3rem;background:var(--card);border-radius:50%;width:34px;height:34px;display:grid;place-items:center;border:1px solid var(--line)}
+.empty{grid-column:1/-1;text-align:center;color:var(--mut);padding:40px 0}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:flex-end;justify-content:center;z-index:30}.ov.open{display:flex}
+.sheet{background:var(--bg);width:100%;max-width:560px;max-height:90vh;overflow:auto;border-radius:22px 22px 0 0;padding:20px 18px 26px}
+@media(min-width:700px){.ov{align-items:center}.sheet{border-radius:22px}}
+.sheet .big{font-size:3.4rem}.sheet h2{font-family:var(--fd);font-size:1.6rem;color:var(--acc);line-height:1.3}
+.sheet .ds{margin:8px 0 14px}
+dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;border-top:1.5px solid var(--line);padding-top:12px}
+dt{color:var(--mut)}dd{font-weight:500}
+.acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.btn{padding:10px 20px;border-radius:99px;background:var(--acc);color:#fff;font-weight:700;text-decoration:none;display:inline-block}
+.btn.g{background:transparent;color:var(--acc);border:1.5px solid var(--acc)}
+.x{float:inline-end;width:36px;height:36px;border-radius:50%;background:var(--line);font-size:1.2rem}
+footer{border-top:2px solid var(--line);padding:22px 0 34px;color:var(--mut);font-size:.9rem;text-align:center}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap"><div class="big" aria-hidden="true">🧵</div><h1>خيوط الحكاية</h1><p>معرض لأعمال التطريز اليدوي بأنماطه وغرزه وألوانه، حسب القطعة والمنطقة.</p></div></header>
+<main class="wrap">
+  <div class="bar">
+    <div class="row2"><input type="search" id="q" placeholder="ابحثي عن قطعة أو غرزة..." aria-label="بحث"><select id="area" aria-label="نمط المنطقة"></select></div>
+    <div class="chips" id="chips" role="group" aria-label="التصنيفات"></div>
+  </div>
+  <div class="cnt" id="cnt"></div>
+  <div class="list" id="list"></div>
+</main>
+<footer><div class="wrap">القطع المعروضة أمثلة تجريبية. بدّلي الأسماء والصور بأعمال المشاركات الحقيقية.</div></footer>
+<div class="ov" id="ov"><div class="sheet" role="dialog" aria-modal="true"><button class="x" id="cl" aria-label="إغلاق">&times;</button><div id="body"></div></div></div>
+<script>
+const D=[{"n": "ثوب بغرزة الصليب", "c": "ثوب", "a": "رام الله", "d": "ثوب بتطريز كثيف على الصدر والأكمام بخيوط حمراء وسوداء.", "e": "👗", "x": [["الغرزة", "الصليب"], ["الخامة", "قماش كتان"], ["المدة التقريبية", "3 أشهر"], ["الألوان", "أحمر، أسود، أخضر"]]}, {"n": "شال بنقوش النخلة", "c": "شال", "a": "الخليل", "d": "شال بنقشة النخلة وخيوط ملونة على الأطراف.", "e": "🧣", "x": [["الغرزة", "الصليب والساتان"], ["الخامة", "صوف خفيف"], ["المدة التقريبية", "3 أسابيع"], ["الألوان", "أزرق، أحمر، ذهبي"]]}, {"n": "وسادة بنقشة الورد", "c": "وسادة", "a": "بيت لحم", "d": "وسادة ديكور بتطريز ورود ناعم.", "e": "🛋️", "x": [["الغرزة", "الساتان"], ["الخامة", "قطن"], ["المدة التقريبية", "أسبوعان"], ["الألوان", "وردي، أخضر، أبيض"]]}, {"n": "حقيبة كتف مطرزة", "c": "حقيبة", "a": "غزة", "d": "حقيبة يومية بتطريز يدوي وبطانة قماشية.", "e": "👜", "x": [["الغرزة", "الصليب"], ["الخامة", "قماش وجلد صناعي"], ["المدة التقريبية", "أسبوع"], ["الألوان", "أسود، أحمر"]]}, {"n": "عقد مطرز", "c": "إكسسوار", "a": "رام الله", "d": "عقد صغير بتطريز على قماش مشدود وخرز.", "e": "📿", "x": [["الغرزة", "الصليب الصغير"], ["الخامة", "قماش وخرز"], ["المدة التقريبية", "3 أيام"], ["الألوان", "أحمر، ذهبي"]]}, {"n": "ثوب بتطريز القصب", "c": "ثوب", "a": "بيت لحم", "d": "تطريز بخيوط ذهبية وفضية على قماش داكن.", "e": "👘", "x": [["الغرزة", "القصب"], ["الخامة", "مخمل"], ["المدة التقريبية", "4 أشهر"], ["الألوان", "أسود، ذهبي"]]}, {"n": "شال بنقشة القمر والنجوم", "c": "شال", "a": "غزة", "d": "شال ناعم بنقوش هندسية متكررة.", "e": "🌙", "x": [["الغرزة", "الصليب"], ["الخامة", "قطن"], ["المدة التقريبية", "أسبوعان"], ["الألوان", "أزرق، أبيض"]]}, {"n": "مفرش طاولة مطرز", "c": "وسادة", "a": "الخليل", "d": "مفرش بإطار مطرز وبنقوش الأقحوان.", "e": "🌼", "x": [["الغرزة", "الساتان والصليب"], ["الخامة", "كتان"], ["المدة التقريبية", "3 أسابيع"], ["الألوان", "أصفر، أحمر"]]}, {"n": "سوار مطرز", "c": "إكسسوار", "a": "بيت لحم", "d": "سوار قماش بتطريز دقيق وإغلاق بزرّ.", "e": "⭕", "x": [["الغرزة", "الصليب"], ["الخامة", "قماش وزر"], ["المدة التقريبية", "يومان"], ["الألوان", "أخضر، أحمر"]]}, {"n": "حقيبة ظهر بنقوش تراثية", "c": "حقيبة", "a": "رام الله", "d": "حقيبة عملية بقطعة تطريز كبيرة على الواجهة.", "e": "🎒", "x": [["الغرزة", "الصليب"], ["الخامة", "قماش متين"], ["المدة التقريبية", "10 أيام"], ["الألوان", "أحمر، أسود"]]}];
+const LINK=null, ALL_AREAS='كل الأنماط', FAVWORD='♥ أعجبتني', HUE={"ثوب": 350, "شال": 20, "وسادة": 8, "حقيبة": 30, "إكسسوار": 45, "_": 350};
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let favs=[];try{favs=JSON.parse(localStorage.getItem('fav_emb')||'[]')}catch(e){}
+const saveF=()=>{try{localStorage.setItem('fav_emb',JSON.stringify(favs))}catch(e){}};
+let cat='الكل',area='',q='';
+const cats=['الكل',...new Set(D.map(d=>d.c)),FAVWORD];
+const areas=[...new Set(D.map(d=>d.a))];
+$('#area').innerHTML=`<option value="">${ALL_AREAS}</option>`+areas.map(a=>`<option>${esc(a)}</option>`).join('');
+function chips(){$('#chips').innerHTML=cats.map(c=>`<button class="chip" aria-pressed="${c===cat}" data-c="${esc(c)}">${esc(c)}</button>`).join('')}
+function tile(d){const h=HUE[d.c]??HUE._;return `background:linear-gradient(135deg,hsl(${h},60%,${34}%),hsl(${h+20},55%,${22}%))`}
+function render(){
+  const L=D.map((d,i)=>({...d,i})).filter(d=>(cat==='الكل'||(cat===FAVWORD?favs.includes(d.i):d.c===cat))&&(!area||d.a===area)&&(!q||(d.n+d.d+d.c+d.a).includes(q)));
+  $('#cnt').textContent=L.length+' نتيجة';
+  $('#list').innerHTML=L.length?L.map(d=>`<button class="it" data-i="${d.i}"><div class="tile" style="${tile(d)}"><span aria-hidden="true">${d.e}</span><span class="fav" data-f="${d.i}" role="button" aria-label="حفظ">${favs.includes(d.i)?'♥':'♡'}</span></div><div class="tx"><h3>${esc(d.n)}</h3><div class="meta">${esc(d.c)} · ${esc(d.a)}</div><p>${esc(d.d)}</p></div></button>`).join(''):`<p class="empty">ما في نتائج. جرّبي كلمة ثانية أو غيّري الفلتر.</p>`;
+}
+$('#chips').onclick=e=>{const b=e.target.closest('[data-c]');if(b){cat=b.dataset.c;chips();render()}};
+$('#q').oninput=e=>{q=e.target.value.trim();render()};
+$('#area').onchange=e=>{area=e.target.value;render()};
+$('#list').onclick=e=>{
+  const f=e.target.closest('[data-f]');
+  if(f){e.stopPropagation();const i=+f.dataset.f;favs=favs.includes(i)?favs.filter(x=>x!==i):[...favs,i];saveF();render();return}
+  const c=e.target.closest('[data-i]');if(c)show(+c.dataset.i);
+};
+function show(i){
+  const d=D[i];
+  const link=LINK?`<a class="btn" target="_blank" rel="noopener" href="${LINK.base+encodeURIComponent(d.m||d.n)}">${LINK.label}</a>`:'';
+  $('#body').innerHTML=`<div class="big" aria-hidden="true">${d.e}</div><h2>${esc(d.n)}</h2><div class="meta" style="color:var(--acc2)">${esc(d.c)} · ${esc(d.a)}</div><p class="ds">${esc(d.d)}</p><dl>${d.x.map(r=>`<dt>${esc(r[0])}</dt><dd>${esc(r[1])}</dd>`).join('')}</dl><div class="acts">${link}<button class="btn g" id="fv">${favs.includes(i)?'♥ محفوظ':'♡ '+'حفظ'}</button></div>`;
+  $('#fv').onclick=()=>{favs=favs.includes(i)?favs.filter(x=>x!==i):[...favs,i];saveF();show(i);render()};
+  $('#ov').classList.add('open');
+}
+$('#cl').onclick=()=>$('#ov').classList.remove('open');
+$('#ov').onclick=e=>{if(e.target.id==='ov')$('#ov').classList.remove('open')};
+document.onkeydown=e=>{if(e.key==='Escape')$('#ov').classList.remove('open')};
+chips();render();
+</script>
+</body>
+</html>
